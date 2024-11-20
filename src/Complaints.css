@@ -1,0 +1,113 @@
+
+  
+  /* Table Styling */
+  .custom-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-table .p-datatable-header {
+    background: #0078d7;
+    color: white;
+  }
+  
+  /* Dialog */
+  .custom-dialog {
+    border-radius: 10px;
+    padding: 15px;
+  }
+  
+  .dialog-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  /* Buttons */
+  
+  .custom-button,
+  .save-button,
+  .cancel-button {
+    background-color: #2c3e50; /* Modern dark blue-gray */
+    border: none;
+    color: #ffffff; /* Crisp white text for contrast */
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px; /* Smooth, rounded edges */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    cursor: pointer;
+    margin-right: 10px; /* Adds gap between buttons */
+  }
+  
+  /* Hover State */
+  .custom-button:hover,
+  .save-button:hover,
+  .cancel-button:hover {
+    background-color: #34495e; /* Slightly lighter dark blue-gray for hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly elevated shadow */
+    transform: translateY(-2px); /* Creates a lifting effect */
+  }
+  
+  /* Active (Pressed) State */
+  .custom-button:active,
+  .save-button:active,
+  .cancel-button:active {
+    background-color: #1f2d3a; /* Darker shade on active click */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    transform: translateY(1px); /* Slightly pressed-down effect */
+  }
+  
+  /* Optional: Disabled State */
+  .custom-button:disabled,
+  .save-button:disabled,
+  .cancel-button:disabled {
+    background-color: #bdc3c7; /* Neutral gray for disabled state */
+    color: #ffffff; /* Maintain white text for readability */
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  
+
+  /* Form Styling */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50; /* Dark gray for label text to match button color */
+  }
+  
+  .form-field input,
+  .form-field .p-dropdown {
+    padding: 12px;
+    border-radius: 8px; /* Matching rounded corners with buttons */
+    border: 1px solid #ccc; /* Light border for inputs */
+    font-size: 1rem;
+   
+  }
+  
+ 
+  .form-field input:focus,
+  .form-field .p-dropdown:focus {
+    outline: none !important;
+    border-color: #2c3e50 !important;
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.5) !important;
+  }
+  
+  .form-field input::placeholder,
+  .form-field .p-dropdown::placeholder {
+    color: #7f8c8d; /* Lighter gray for placeholder text */
+  }
+  

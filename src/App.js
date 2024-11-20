@@ -8,6 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Resolutions from './Resolutions';
 import AuditLogs from './AuditLogs';
 
+import 'primereact/resources/themes/saga-blue/theme.css'; /* Replace with your preferred theme */
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+
+
 const App = () => {
   return (
     <Router>
