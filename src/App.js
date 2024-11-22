@@ -1,32 +1,72 @@
+// import React from 'react';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Complaints from './Complaints';
+// import Users from './Users';
+// import Officers from './Officers';
+// import RegisterLoginForm from './RegisterLoginForm';
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Complaints from './Complaints';
-import Users from './Users';
-import Officers from './Officers';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Resolutions from './Resolutions';
-import AuditLogs from './AuditLogs';
+// import 'primereact/resources/themes/saga-blue/theme.css';
+// import 'primereact/resources/primereact.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'primeicons/primeicons.css';
 
-import 'primereact/resources/themes/saga-blue/theme.css'; /* Replace with your preferred theme */
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
 
+// const App = () => {
+//   return (
+//     <Router> 
+//       <div className="container mt-4">
+//         <Routes>
+//            <Route path="/" element={<RegisterLoginForm />} />
+//           <Route path="/complaints" element={<Complaints />} />
+//           <Route path="/users" element={<Users />} />
+//           <Route path="/officers" element={<Officers />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// };
+
+// export default App;
+
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import RegisterLoginForm from "./RegisterLoginForm";
+import Complaints from "./Complaints";
+import Users from "./Users";
+import Officers from "./Officers";
 
 const App = () => {
   return (
     <Router>
-    
-      <div className="container mt-4">
-        <Routes>
-          <Route path="/" element={<Complaints />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/officers" element={<Officers />} />
-          <Route path="/resolutions" element={<Resolutions />} />
-          <Route path="/audit-logs" element={<AuditLogs />} />
-        </Routes>
-      </div>
+      <AppLayout />
     </Router>
+  );
+};
+
+const AppLayout = () => {
+  const location = useLocation();
+
+  // Check if the current path is Register/Login page
+  const isAuthPage = location.pathname === "/";
+
+  return (
+    <div className="d-flex">
+      {!isAuthPage && <Sidebar />}
+      <div className={!isAuthPage ? "content-with-sidebar" : "content-full"}>
+        {!isAuthPage && <Header/>}
+        <div className={!isAuthPage ? "container mt-4" : ""}>
+          <Routes>
+            <Route path="/" element={<RegisterLoginForm />} />
+            <Route path="/complaints" element={<Complaints />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/officers" element={<Officers />} />
+          </Routes>
+        </div>
+      </div>
+    </div>
   );
 };
 
