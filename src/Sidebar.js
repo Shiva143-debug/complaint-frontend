@@ -61,6 +61,15 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
+              to="/roles"
+              onClick={() => handleItemClick("/roles")}
+              className={`sidebar-item ${active === "/roles" ? "active" : ""}`}
+            >
+              Role Management
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/reports"
               onClick={() => handleItemClick("/reports")}
               className={`sidebar-item ${active === "/reports" ? "active" : ""}`}

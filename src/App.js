@@ -37,6 +37,8 @@ import RegisterLoginForm from "./RegisterLoginForm";
 import Complaints from "./Complaints";
 import Users from "./Users";
 import Officers from "./Officers";
+import Mycomplaints from "./Mycomplaints";
+import Roles from "./Roles";
 
 const App = () => {
   return (
@@ -61,7 +63,9 @@ const AppLayout = () => {
           <Routes>
             <Route path="/" element={<RegisterLoginForm />} />
             <Route path="/complaints" element={<Complaints />} />
+            <Route path="/my-complaints" element={<Mycomplaints />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/roles" element={<Roles />} />
             <Route path="/officers" element={<Officers />} />
           </Routes>
         </div>

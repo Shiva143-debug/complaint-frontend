@@ -215,9 +215,9 @@ const Complaints = () => {
 
 
   return (
-    <div className='complaint-container'>
-      <div className="flex justify-content-between align-items-center mb-5 mt-5">
-        <h2 className="text-2xl font-bold">Complaints</h2>
+    <div className='complaint-container' style={{height:"90vh"}}>
+       <div className="flex justify-content-between mb-5 mt-5" style={{width:"80vw"}}>
+       <h2 className="text-5xl font-bold text-white" >Complaints</h2>
         <Button label="Add Complaint" icon="pi pi-plus" onClick={openDialog}
           style={{ backgroundColor: '#2c3e50', color: 'white', border: '2px solid #2c3e50', padding: '10px 20px', borderRadius: '5px', fontSize: '14px', fontWeight: 'bold', transition: 'background-color 0.3s, border-color 0.3s', }}
           onFocus={(e) => {
@@ -230,7 +230,7 @@ const Complaints = () => {
 
       </div>
 
-      <DataTable value={data.getComplaints} paginator rows={8} stripedRows responsiveLayout="scroll" className="shadow-2 rounded-md" style={{ width: "80vw" }}>
+      <DataTable value={data.getComplaints} paginator rows={6} stripedRows responsiveLayout="scroll" className="shadow-2 rounded-md custom-table" style={{ width: "80vw" }}>
         <Column field="description" header="Complaint" sortable></Column>
         <Column field="user.name" header="complaintCreatedBy" sortable></Column>
         <Column field="assignedOfficer.name" header="AssignedTo" sortable></Column>
@@ -242,8 +242,10 @@ const Complaints = () => {
       <Dialog header={<h3 className="dialog-title">Add Complaint</h3>} visible={showDialog} style={{ width: '40vw' }} modal onHide={closeDialog} className="custom-dialog"
         footer={
           <div className="dialog-footer">
-            <Button label="Cancel" icon="pi pi-times" className="cancel-button" onClick={closeDialog} />
-            <Button label="Save" icon="pi pi-check" className="save-button" onClick={handleSubmit} />
+            {/* <Button label="Cancel" icon="pi pi-times" className="cancel-button" onClick={closeDialog} />
+            <Button label="Save" icon="pi pi-check" className="save-button" onClick={handleSubmit} /> */}
+            <Button label="Cancel" icon="pi pi-times" onClick={closeDialog} className="btn btn-outline-danger mx-2"/>
+            <Button label="Save" icon="pi pi-check" onClick={handleSubmit} className="btn btn-primary"/>
           </div>
         }
       >
@@ -311,18 +313,8 @@ const Complaints = () => {
         onHide={closeDialog}
         footer={
           <div className="d-flex justify-content-end gap-2">
-            <Button
-              label="Cancel"
-              icon="pi pi-times"
-              onClick={closeDialog}
-              className="btn btn-outline-danger"
-            />
-            <Button
-              label="Save"
-              icon="pi pi-check"
-              onClick={handleResolveSubmit}
-              className="btn btn-primary"
-            />
+            <Button label="Cancel" icon="pi pi-times" onClick={closeDialog} className="btn btn-outline-danger"/>
+            <Button label="Save" icon="pi pi-check" onClick={handleResolveSubmit} className="btn btn-primary"/>
           </div>
         }
         style={{ width: "50vw" }}
